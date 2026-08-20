@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Florida Housing Market — Turning-Point Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="viz-root">
+
+  <header class="page-head">
+    <p class="eyebrow">Buyer's Market Tracker</p>
+    <h1>Florida Housing Market — Turning-Point Dashboard</h1>
+    <p class="subhead">
+      A read on whether Florida home prices are cooling toward a real correction — built around
+      proportional and inverse relationships between rates, supply, demand, and price, the same
+      mechanics that flagged the 2008–2009 crash before it hit headlines.
+    </p>
+    <p class="asof">Snapshot as of August 20, 2026</p>
+    <div class="disclaimer">
+      <strong>Read before acting on this.</strong> Figures below are pulled from public aggregators
+      (Redfin, Zillow, Houzeo, NAR) that disagree with each other by design — different sample
+      windows, home types, and mix-adjustment methods. Treat every number as directional, not exact.
+      Before making a purchase decision, verify the specific metro/ZIP on Redfin's local data center
+      and pull a live CMA from an agent. This is not financial advice.
+    </div>
+  </header>
+
+  <section>
+    <h2>The core relationship</h2>
+    <p class="section-sub">Two mechanics explain almost every price cycle, including 2008–09. Everything in the tiles below is tagged by which one it feeds.</p>
+    <div class="primer-grid">
+      <div class="primer-card">
+        <div class="ptitle"><span class="pglyph">↕</span>Inverse to price</div>
+        <p>When this indicator <strong>rises</strong>, prices tend to <strong>fall</strong> — and vice versa. These are the supply-and-cost-side levers.</p>
+        <ul>
+          <li>Mortgage rates ↑ → monthly payment ↑ → buyer pool shrinks → prices soften</li>
+          <li>Months of supply ↑ → sellers compete for fewer buyers → prices soften</li>
+          <li>Days on market ↑ → buyer leverage ↑ → prices soften</li>
+          <li>Insurance / HOA cost ↑ → effective price ↑ → demand shrinks at the same list price</li>
+        </ul>
+      </div>
+      <div class="primer-card">
+        <div class="ptitle"><span class="pglyph">⇄</span>Proportional to price</div>
+        <p>When this indicator rises, prices tend to rise <strong>with it</strong> — these are demand-side confirmations.</p>
+        <ul>
+          <li>Sales volume / pending contracts ↑ → prices firm up or accelerate</li>
+          <li>Net in-migration ↑ → more buyers chasing the same stock → prices firm</li>
+          <li>Wage growth ↑ → affordability improves → market can sustain higher prices</li>
+          <li>New construction permits ↑ → future supply ↑ → cools *future* price growth (lagged inverse)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Indicators to watch right now</h2>
+    <p class="section-sub">National and Florida-specific readings, each tagged with its relationship to price and a buyer-favorability read (favorable = pointing toward lower prices).</p>
+
+    <div class="tile-grid">
+
+      <div class="tile">
+        <div class="tile-label">30-yr fixed mortgage rate</div>
+        <div class="tile-value-row"><span class="tile-value">6.66%</span><span class="chip chip-warning">Elevated</span></div>
+        <div class="tile-rel"><span class="arrow">↕</span> Inverse to price</div>
+        <div class="meter-track">
+          <div class="meter-fill" style="width:67%"></div>
+          <div class="meter-ref" style="left:11%" title="2021 low: 2.65%"></div>
+          <div class="meter-ref" style="left:96%" title="2023 high: 7.8%"></div>
+        </div>
+        <div class="meter-labels"><span>2.65% ('21 low)</span><span>7.8% ('23 high)</span></div>
+        <div class="tile-context">Rates fell sub-3% in 2021; near-decade highs in 2023. A move back toward 5–5.5% is the level most forecasters treat as the demand-unlock line.</div>
+      </div>
+
+      <div class="tile">
+        <div class="tile-label">National months of supply</div>
+        <div class="tile-value-row"><span class="tile-value">4.6 mo</span><span class="chip chip-neutral">Balanced-ish</span></div>
+        <div class="tile-rel"><span class="arrow">↕</span> Inverse to price</div>
+        <div class="meter-track">
+          <div class="meter-fill" style="width:38%"></div>
+          <div class="meter-ref" style="left:42%" title="6 mo — balanced market ceiling"></div>
+          <div class="meter-ref" style="left:100%" title="2008 peak: 12.2 mo (new homes)"></div>
+        </div>
+        <div class="meter-labels"><span>0 mo</span><span>12.2 mo ('08 peak)</span></div>
+        <div class="tile-context">Under ~5 months favors sellers; over ~6–7 tips to buyers. 2008's new-home glut peaked near 12.2 months — still roughly 2.5x today's reading.</div>
+      </div>
+
+      <div class="tile">
+        <div class="tile-label">Florida months of supply</div>
+        <div class="tile-value-row"><span class="tile-value">4.7 mo</span><span class="chip chip-good">Buyer-favorable</span></div>
+        <div class="tile-rel"><span class="arrow">↕</span> Inverse to price</div>
+        <div class="meter-track">
+          <div class="meter-fill" style="width:39%"></div>
+          <div class="meter-ref" style="left:42%" title="6 mo — balanced ceiling"></div>
+        </div>
+        <div class="meter-labels"><span>0 mo</span><span>12 mo</span></div>
+        <div class="tile-context">Up from ~1.5–2 months during the 2021–22 frenzy. Broward/Palm Beach are the exception — supply there just dropped below pre-pandemic levels.</div>
+      </div>
+
+      <div class="tile">
+        <div class="tile-label">FL median days on market</div>
+        <div class="tile-value-row"><span class="tile-value">84 days</span><span class="chip chip-good">Buyer-favorable</span></div>
+        <div class="tile-rel"><span class="arrow">↕</span> Inverse to price</div>
+        <div class="meter-track"><div class="meter-fill" style="width:70%"></div></div>
+        <div class="meter-labels"><span>~30 ('22 frenzy)</span><span>~120+ (deep buyer's mkt)</span></div>
+        <div class="tile-context">Nearly 3x the 2022 frenzy pace. Longer time on market is a direct read on buyer leverage — it shows up in list-price cuts before it shows up in sold-price data.</div>
+      </div>
+
+      <div class="tile">
+        <div class="tile-label">FL listings with a price cut</div>
+        <div class="tile-value-row"><span class="tile-value">~25–42%</span><span class="chip chip-good">Buyer-favorable</span></div>
+        <div class="tile-rel"><span class="arrow">↕</span> Leading / inverse</div>
+        <div class="meter-track"><div class="meter-fill" style="width:60%"></div></div>
+        <div class="meter-labels"><span>~15% (healthy)</span><span>40%+ (capitulation)</span></div>
+        <div class="tile-context">~42% of South Florida listings and ~1 in 4 Orlando listings carried a cut recently. Rule of thumb: sustained readings above ~20% front-run sold-price declines by a quarter or two.</div>
+      </div>
+
+      <div class="tile">
+        <div class="tile-label">FL condo months of supply</div>
+        <div class="tile-value-row"><span class="tile-value">13.2 mo</span><span class="chip chip-critical">Distressed</span></div>
+        <div class="tile-rel"><span class="arrow">↕</span> Inverse to price</div>
+        <div class="meter-track">
+          <div class="meter-fill" style="width:100%; background: var(--critical);"></div>
+        </div>
+        <div class="meter-labels"><span>0 mo</span><span>12.2 mo ('08 SFH peak)</span></div>
+        <div class="tile-context">Already past 2008's single-family peak. Prices down 6.1% YoY across 92% of condo markets — driven by insurance costs and post-Surfside reserve/inspection mandates (SB 4-D), not credit quality. Worth watching if you're eyeing a condo specifically.</div>
+      </div>
+
+      <div class="tile">
+        <div class="tile-label">Existing-home sales (US, SAAR)</div>
+        <div class="tile-value-row"><span class="tile-value">4.06M</span><span class="chip chip-neutral">Mixed</span></div>
+        <div class="tile-rel"><span class="arrow">⇄</span> Proportional to price</div>
+        <div class="meter-track"><div class="meter-fill" style="width:50%"></div></div>
+        <div class="meter-labels"><span>+0.7% YoY</span><span>−1.7% MoM</span></div>
+        <div class="tile-context">Sales volume usually turns before price does. One soft month isn't a trend — a string of MoM declines is what preceded both 2008 and the 2022 slowdown.</div>
+      </div>
+
+      <div class="tile">
+        <div class="tile-label">Avg. FL homeowners insurance</div>
+        <div class="tile-value-row"><span class="tile-value">$3.2–4.5K/yr</span><span class="chip chip-warning">Still a drag</span></div>
+        <div class="tile-rel"><span class="arrow">↕</span> Inverse to price</div>
+        <div class="meter-track"><div class="meter-fill" style="width:55%"></div></div>
+        <div class="meter-labels"><span>~2x nat'l avg</span><span>higher in coastal/condo</span></div>
+        <div class="tile-context">First relief in years: Citizens cut rates 8.7% statewide this spring, more in South Florida. Still a meaningful bite out of affordability that a mortgage-rate-only view misses.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>What the last three cycles looked like</h2>
+    <p class="section-sub">Approximate, illustrative figures for national months-of-supply and the 30-yr rate at each turning point — the shape matters more than the decimal.</p>
+    <div class="chart-card">
+      <div class="timeline-wrap">
+        <div class="timeline">
+          <div class="tl-step">
+            <div class="tl-bar-track"><span class="tl-val">6 mo</span><div class="tl-bar" style="height:49%"></div></div>
+            <div class="tl-year">2006</div>
+            <div class="tl-label">Peak of prior boom. Rates ~6.4%.</div>
+          </div>
+          <div class="tl-step">
+            <div class="tl-bar-track"><span class="tl-val">12.2 mo</span><div class="tl-bar peak" style="height:100%"></div></div>
+            <div class="tl-year">2008–09</div>
+            <div class="tl-label">Subprime/ARM resets + oversupply. Prices −27% nat'l, −50%+ in parts of FL.</div>
+          </div>
+          <div class="tl-step">
+            <div class="tl-bar-track"><span class="tl-val">~2 mo</span><div class="tl-bar" style="height:16%"></div></div>
+            <div class="tl-year">2021</div>
+            <div class="tl-label">Record-low ~2.65% rates. Frenzy: supply near record lows, bidding wars.</div>
+          </div>
+          <div class="tl-step">
+            <div class="tl-bar-track"><span class="tl-val">~3.3 mo</span><div class="tl-bar" style="height:27%"></div></div>
+            <div class="tl-year">2022</div>
+            <div class="tl-label">Fed hikes send rates 3%→7%+ in months. Demand craters; "lock-in effect" keeps supply low, so prices stall/dip instead of crashing.</div>
+          </div>
+          <div class="tl-step">
+            <div class="tl-bar-track"><span class="tl-val">4.6 mo</span><div class="tl-bar now" style="height:38%"></div></div>
+            <div class="tl-year">2026 (now)</div>
+            <div class="tl-label">Supply normalizing toward balance. No subprime wave — but FL condos show 2008-like distress from insurance, not credit.</div>
+          </div>
+        </div>
+      </div>
+      <div class="legend-row">
+        <div class="legend-item"><span class="legend-swatch" style="background:var(--seq-300)"></span>Months of supply</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:var(--critical)"></span>Cycle peak (2008–09)</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:var(--series-1)"></span>Current reading</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Home prices — 10 largest Florida cities</h2>
+    <p class="section-sub">Ranked by median sale price, most recent 3-month window. YoY change in red = rising (bad for a buyer waiting on a dip), blue = falling.</p>
+
+    <div class="chart-card">
+      <div class="chart-toolbar">
+        <div class="chart-title">Median sale price by city</div>
+        <button class="toggle-btn" id="tableToggle" onclick="toggleView()">View as table</button>
+      </div>
+
+      <div id="chartView">
+        <div class="bar-row" data-city="Miami">
+          <div class="bar-city">Miami</div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+          <div class="bar-value">$652,000</div>
+          <div class="bar-yoy yoy-down">−0.4%</div>
+        </div>
+        <div class="bar-row" data-city="Fort Lauderdale">
+          <div class="bar-city">Fort Lauderdale</div>
+          <div class="bar-track"><div class="bar-fill" style="width:92%"></div></div>
+          <div class="bar-value">$600,000</div>
+          <div class="bar-yoy yoy-up">+17.6%</div>
+        </div>
+        <div class="bar-row" data-city="Tampa">
+          <div class="bar-city">Tampa</div>
+          <div class="bar-track"><div class="bar-fill" style="width:71%"></div></div>
+          <div class="bar-value">$466,000</div>
+          <div class="bar-yoy yoy-up">+1.2%</div>
+        </div>
+        <div class="bar-row" data-city="St. Petersburg">
+          <div class="bar-city">St. Petersburg</div>
+          <div class="bar-track"><div class="bar-fill" style="width:68%"></div></div>
+          <div class="bar-value">$446,000</div>
+          <div class="bar-yoy yoy-up">+12.8%</div>
+        </div>
+        <div class="bar-row" data-city="Hialeah">
+          <div class="bar-city">Hialeah</div>
+          <div class="bar-track"><div class="bar-fill" style="width:66%"></div></div>
+          <div class="bar-value">~$430,000<span class="bar-note">*</span></div>
+          <div class="bar-yoy yoy-up">n/a*</div>
+        </div>
+        <div class="bar-row" data-city="Orlando">
+          <div class="bar-city">Orlando</div>
+          <div class="bar-track"><div class="bar-fill" style="width:62%"></div></div>
+          <div class="bar-value">$405,000</div>
+          <div class="bar-yoy yoy-up">+4.8%</div>
+        </div>
+        <div class="bar-row" data-city="Port St. Lucie">
+          <div class="bar-city">Port St. Lucie</div>
+          <div class="bar-track"><div class="bar-fill" style="width:61%"></div></div>
+          <div class="bar-value">$400,000</div>
+          <div class="bar-yoy yoy-down">−0.1%</div>
+        </div>
+        <div class="bar-row" data-city="Cape Coral">
+          <div class="bar-city">Cape Coral</div>
+          <div class="bar-track"><div class="bar-fill" style="width:58%"></div></div>
+          <div class="bar-value">$375,000</div>
+          <div class="bar-yoy yoy-up">+1.6%</div>
+        </div>
+        <div class="bar-row" data-city="Jacksonville">
+          <div class="bar-city">Jacksonville</div>
+          <div class="bar-track"><div class="bar-fill" style="width:48%"></div></div>
+          <div class="bar-value">$315,000</div>
+          <div class="bar-yoy yoy-up">+4.2%</div>
+        </div>
+        <div class="bar-row" data-city="Tallahassee">
+          <div class="bar-city">Tallahassee</div>
+          <div class="bar-track"><div class="bar-fill" style="width:48%"></div></div>
+          <div class="bar-value">$310,000</div>
+          <div class="bar-yoy yoy-up">+10.6%</div>
+        </div>
+      </div>
+
+      <table class="data-table hidden" id="tableView">
+        <thead>
+          <tr><th>City</th><th class="num">Median price</th><th class="num">YoY change</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Miami</td><td class="num">$652,000</td><td class="num">−0.4%</td></tr>
+          <tr><td>Fort Lauderdale</td><td class="num">$600,000</td><td class="num">+17.6%</td></tr>
+          <tr><td>Tampa</td><td class="num">$466,000</td><td class="num">+1.2%</td></tr>
+          <tr><td>St. Petersburg</td><td class="num">$446,000</td><td class="num">+12.8%</td></tr>
+          <tr><td>Hialeah*</td><td class="num">~$430,000</td><td class="num">n/a</td></tr>
+          <tr><td>Orlando</td><td class="num">$405,000</td><td class="num">+4.8%</td></tr>
+          <tr><td>Port St. Lucie</td><td class="num">$400,000</td><td class="num">−0.1%</td></tr>
+          <tr><td>Cape Coral</td><td class="num">$375,000</td><td class="num">+1.6%</td></tr>
+          <tr><td>Jacksonville</td><td class="num">$315,000</td><td class="num">+4.2%</td></tr>
+          <tr><td>Tallahassee</td><td class="num">$310,000</td><td class="num">+10.6%</td></tr>
+        </tbody>
+      </table>
+
+      <div class="legend-row">
+        <div class="legend-item"><span class="legend-swatch" style="background:var(--series-1)"></span>Median sale price (3-mo)</div>
+        <div class="legend-item"><span style="color:var(--div-red); font-weight:700;">▲</span>Price rising YoY</div>
+        <div class="legend-item"><span style="color:var(--div-blue); font-weight:700;">▼</span>Price falling YoY</div>
+      </div>
+      <p class="tile-context" style="margin-top:10px;">
+        * Hialeah's public data conflicts sharply across sources (~$229K to ~$452K depending on window/mix) — likely a condo-heavy, small-sample skew. Verify directly before relying on it.
+        Statewide (all FL, all home types): ~$398,752 median, +2.8% YoY. Statewide single-family: ~$432,000, +4.9% YoY.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Reading the whole board</h2>
+    <p class="section-sub" style="max-width:820px;">
+      Supply and days-on-market are firmly in buyer-favorable territory statewide, and price cuts are
+      widespread — that combination is what typically shows up a couple of quarters <em>before</em>
+      sold prices roll over, not after. What's different from 2008: sales volume hasn't collapsed,
+      there's no subprime/ARM-reset wave, and current owners are largely locked into low rates rather
+      than forced sellers. The clearest 2008-style distress signal on the board right now is
+      Florida's condo segment specifically — driven by insurance and assessment shocks, not lending.
+      A rate move back toward 5–5.5%, plus continued months-of-supply growth past 6, is the combination
+      most likely to turn "flat and grinding" into an actual price decline in the single-family market.
+    </p>
+  </section>
+
+  <footer class="sources">
+    Sources (accessed Aug 20, 2026): Redfin city housing-market pages (Miami, Tampa, Orlando, Fort Lauderdale, St. Petersburg, Port St. Lucie, Tallahassee) · Zillow Home Values · Houzeo Florida market reports · NAR Existing-Home Sales report (Aug 2026) · Freddie Mac PMMS / Forbes Advisor mortgage-rate trackers · MoveWithMomentum Florida housing tracker · GreatFlorida / LiveCovered Florida insurance guides · discoversouthflorida.com (Broward/Palm Beach inventory). Cross-source figures were reconciled by hand and rounded; treat as directional context, not a substitute for a live CMA.
+  </footer>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
