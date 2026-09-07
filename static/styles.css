@@ -169,6 +169,11 @@ h2 { font-size: 15px; font-weight: 700; margin: 0 0 4px; }
 .toggle-btn:hover { color: var(--text-primary); }
 
 .bar-row { display: grid; grid-template-columns: 118px 1fr 92px 64px; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--grid); position: relative; }
+@media (max-width: 480px) {
+  .bar-row { grid-template-columns: 78px 1fr 64px 44px; gap: 6px; }
+  .bar-city { font-size: 11px; }
+  .bar-value, .bar-yoy { font-size: 10.5px; }
+}
 .bar-row:last-child { border-bottom: none; }
 .bar-city { font-size: 12.5px; font-weight: 600; }
 .bar-track { position: relative; height: 20px; background: transparent; }
