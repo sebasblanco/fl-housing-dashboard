@@ -185,6 +185,7 @@ h2 { font-size: 15px; font-weight: 700; margin: 0 0 4px; }
 .bar-yoy { font-size: 11px; font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
 .yoy-up { color: var(--div-red); }
 .yoy-down { color: var(--div-blue); }
+.yoy-na { color: var(--text-muted); font-weight: 600; }
 .bar-note { font-size: 9.5px; color: var(--text-muted); font-weight: 500;}
 
 .legend-row { display: flex; gap: 18px; font-size: 11px; color: var(--text-secondary); margin-top: 10px; flex-wrap: wrap; }
